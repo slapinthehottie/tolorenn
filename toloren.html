@@ -1,0 +1,109 @@
+''<!DOCTYPE html>
+<html>
+<head>
+    <title>Amor e Paixão</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #ffbdbd; /* Cor de fundo rosa claro */
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #e53662; /* Cor do título */
+            margin-bottom: 40px;
+        }
+
+        #simButton {
+            margin-bottom: 10px;
+        }
+
+        #naoButton {
+            margin-top: 10px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        #mensagem {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        #imagem {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QUER DAR UMAS BEIJOCAS AMANHÃ?</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button id="simButton" class="btn btn-danger btn-lg btn-block">Sim</button>
+            </div>
+            <div class="col-md-6">
+                <button id="naoButton" class="btn btn-secondary btn-lg">Não</button>
+            </div>
+        </div>
+
+        <p id="mensagem"></p>
+        <img id="imagem" src="" alt="">
+    </div>
+
+    <script>
+        var naoButton = document.getElementById("naoButton");
+        var simButton = document.getElementById("simButton");
+        var mensagem = document.getElementById("mensagem");
+        var imagem = document.getElementById("imagem");
+        var contadorCliques = 0;
+
+        naoButton.addEventListener("click", moveButton);
+        simButton.addEventListener("click", openImage);
+
+        function moveButton() {
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+
+            var buttonWidth = naoButton.offsetWidth;
+            var buttonHeight = naoButton.offsetHeight;
+
+            var randomX = Math.floor(Math.random() * (screenWidth - buttonWidth));
+            var randomY = Math.floor(Math.random() * (screenHeight - buttonHeight));
+
+            naoButton.style.left = randomX + "px";
+            naoButton.style.top = randomY + "px";
+
+            contadorCliques++;
+
+            if (contadorCliques === 1) {
+                mensagem.textContent = "VAI DIZER NÃO MESMO?";
+            } else if (contadorCliques === 2) {
+                mensagem.textContent = "COMPUTADOR SE AUTO DESTRUINDO EM 3 SEGUNDOS A MENOS QUE CLIQUE EM SIM";
+            } else if (contadorCliques >= 3) {
+                mensagem.textContent = "VOCE PERDEU TODOS SEUS DADOS, NÃO ESCOLHEU SABIAMENTE";
+                naoButton.disabled = true;
+            }
+
+            mensagem.style.display = "block";
+        }
+
+        function openImage() {
+            imagem.src = "img/fotogato.jpg";
+            mensagem.textContent = "ENTÃO ESTÁ MARCADO, SEM SE CANSAR EM MEU AMOR(quero ve teu gatin)";
+            mensagem.style.display = "block";
+            imagem.style.display = "block";
+            }
+            </script>
+            
+            </body>
+            </html>
