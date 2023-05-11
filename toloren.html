@@ -52,7 +52,7 @@
                 <button id="simButton" class="btn btn-danger btn-lg btn-block">Sim</button>
             </div>
             <div class="col-md-6">
-                <button id="naoButton" class="btn btn-secondary btn-lg">Não</button>
+                <button id="naoButton" class="btn btn-secondary btn-lg">Nao</button>
             </div>
         </div>
 
@@ -86,11 +86,11 @@
             contadorCliques++;
 
             if (contadorCliques === 1) {
-                mensagem.textContent = "VAI DIZER NÃO MESMO?";
+                mensagem.textContent = "VAI DIZER NAO MESMO?";
             } else if (contadorCliques === 2) {
                 mensagem.textContent = "COMPUTADOR SE AUTO DESTRUINDO EM 3 SEGUNDOS A MENOS QUE CLIQUE EM SIM";
             } else if (contadorCliques >= 3) {
-                mensagem.textContent = "VOCE PERDEU TODOS SEUS DADOS, NÃO ESCOLHEU SABIAMENTE";
+                mensagem.textContent = "VOCE PERDEU TODOS SEUS DADOS, NAO ESCOLHEU SABIAMENTE";
                 naoButton.disabled = true;
             }
 
@@ -99,7 +99,7 @@
 
         function openImage() {
             imagem.src = "img/fotogato.jpg";
-            mensagem.textContent = "ENTÃO ESTÁ MARCADO, SEM SE CANSAR EM MEU AMOR(quero ve teu gatin)";
+            mensagem.textContent = "ENTAO ESTA MARCADO, SEM SE CANSAR EM MEU AMOR(quero ve teu gatin)";
             mensagem.style.display = "block";
             imagem.style.display = "block";
             }
